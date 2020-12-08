@@ -53,15 +53,20 @@ function App() {
           )
         }
         <input style={{
-          width: "300px"
+          width: "300px",
+          marginTop: "20px"
         }} placeholder="If you like to add some circle id..." value={circleId} onChange={e => setCircleId(e.target.value)} />
-        <label>
+        <label style={{
+          marginTop: "30px"
+        }}>
           <Toggle value={bearer} onClick={() => setBearer(!bearer)} />
-          <span>Use example token</span>
+          <span style={{ marginLeft: "15px"}}>Use example token</span>
         </label>
         <button
           style={{
-            marginTop: "10px"
+            marginTop: "10px",
+            padding: "15px",
+            borderRadius: "5px",
           }}
           onClick={() => getServerInfo()}
         >
