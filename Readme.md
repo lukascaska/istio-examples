@@ -137,7 +137,7 @@ no browser digite http://localhost:9090
 ```
 
 3. Veja os acessos de cada aplicação com a seguinte query:
-    - sum by (app) ({\_\_name\_\_=~"istio_requests_total", response_code=~"304|200"})
+    - sum by (app) ({\_\_name\_\_=\~"istio_requests_total", response_code=\~"304|200"})
 
 
 WIP!
