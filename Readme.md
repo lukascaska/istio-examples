@@ -3,7 +3,7 @@ Esse repositório contém exemplos práticos de possíveis utilizações do Isti
 Para deixar o ambiente pronto você precisa de:
 1. Um nó de kubernetes (nesse exemplo utilizei o minikube, mas pode ser feito com qualquer emulador ou k8s gerenciado).
 2. Istio na versão 1.8 disponível no site oficial, para instalar a versão utilizada nesse repositório execute.
-    1. ``` ./bin/istioctl install --set profile=default
+    1. ./bin/istioctl install --set profile=default
 3. Caso use algum emulador de k8s (Ex: Minikube), veja quais os passos para expor os IP's para a rede local do seu computador.
     1. No caso do minikube basta executar *minikube tunnel*
 
@@ -137,7 +137,7 @@ no browser digite http://localhost:9090
 ```
 
 3. Veja os acessos de cada aplicação com a seguinte query:
-    - sum by (app) ({__name__=~"istio_requests_total", response_code=~"304|200"})
+    - sum by (app) ({\_\_name\_\_=~"istio_requests_total", response_code=~"304|200"})
 
 
 WIP!
