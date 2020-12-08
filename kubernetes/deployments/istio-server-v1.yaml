@@ -1,0 +1,39 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name:  istio-server-example
+spec:
+  type: ClusterIP
+  ports:
+  - port: 3000
+    name: http
+    targetPort: 3000
+  selector:
+    app:  istio-server-example
+---
+# Source: hello-kubernetes/templates/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: istio-server-example
+  labels:
+    app: istio-server-example
+    version: v1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: istio-server-example
+      version: v1
+  template:
+    metadata:
+      labels:
+        app: istio-server-example
+        version: v1
+    spec:
+      containers:
+      - name: istio-server-example
+        image: lukascaska/istio-example-server:latest
+        ports:
+        - containerPort: 3000
